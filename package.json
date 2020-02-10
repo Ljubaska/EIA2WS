@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./Endabgabe/server/server.js"
+    "start": "node .EIA2WS/Endabgabe/server/server.js"
   },
   "repository": {
     "type": "git",
