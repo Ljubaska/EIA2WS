@@ -5,7 +5,8 @@ namespace Endabgabe {
     window.addEventListener("load", init);
 
     export let crc2: CanvasRenderingContext2D;
-
+    
+    let server: string = "https://ljubaska2.herokuapp.com/";
     let golden: number = 0.62;
     let objects: DrawObject[] = [];
     let birds: Birds[] = [];
