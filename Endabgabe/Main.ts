@@ -210,9 +210,9 @@ namespace Endabgabe {
     /*function pickingBirds(): void {
         for (let i: number = 0; i < 5; i++) {
     
-            let child: slowChildren = new slowChildren();
-            objects.push(child);
-            children.push(child);
+            let bird: pickinBbird = new pickingBird();
+            objects.push(birds);
+            birds.push(bird);
         }
     }*/
 
