@@ -157,7 +157,7 @@ var Endabgabe;
     /*function pickingBirds(): void {
         for (let i: number = 0; i < 5; i++) {
     
-            let bird: pickingbird = new pickingBird();
+            let bird: pickinBbird = new pickingBird();
             objects.push(birds);
             birds.push(bird);
         }
