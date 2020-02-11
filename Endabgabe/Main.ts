@@ -32,7 +32,6 @@ namespace Endabgabe {
     function init(): void {
         document.getElementById("start").addEventListener("click", startGame);
         document.getElementById("ende").classList.add("invisible");
-
     }
     //Nach laden der Seite wird die Funktion init aufgerufen, die an das HtmlElement "Anleitung" einen click-Eventlistener anhängt, 
     //der die Funktion startGame aufruft
@@ -52,16 +51,25 @@ namespace Endabgabe {
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
 
+        // document.getElementById("startscreen").classList.add("invisible");
+        //Nachfragen
 
+        drawBackground();
 
-        drawSky();
-        drawHill();
-        drawSun();
+        drawClouds();
+        console.log("Clouds", drawClouds);
 
+        drawMountains();
+        console.log("Mountains", drawMountains);
 
-        drawCloud();
-        drawCloud2();
-        drawCloud3();
+        drawBirdhouse();
+        console.log("Birdhouse", drawBirdhouse);
+
+        drawSnowman();
+        console.log("Snowman", drawSnowman);
+
+        drawTrees();
+        console.log("Trees", drawTrees);
 
         generateBird();
         //generatePickingBird();
@@ -72,6 +80,17 @@ namespace Endabgabe {
         setTimeout(gameEnds, 180000);
 
         update();
+    }
+
+    function drawBackground(): void {
+        console.log("Background");
+        let gradiant: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
+        gradiant.addColorStop(0, "HSL(197,71%,73%");
+        gradiant.addColorStop(golden, "white");
+        gradiant.addColorStop(1, "HSL(0, 100%, 99%)");
+
+        crc2.fillStyle = gradiant;
+        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
 
@@ -212,102 +231,27 @@ namespace Endabgabe {
         window.location.reload();
     }
 
-    function drawCloud(): void {
-        crc2.beginPath();
-        crc2.arc(70, 170, 45, 0, 2 * Math.PI);
-        crc2.arc(140, 170, 60, 0, 2 * Math.PI);
-        crc2.arc(200, 170, 45, 0, 2 * Math.PI);
-        crc2.arc(240, 170, 30, 0, 2 * Math.PI);
-        crc2.fillStyle = "#FFFFFF";
-        crc2.fill();
-
-    }
-
-
-    function drawCloud2(): void {
-        crc2.beginPath();
-        crc2.arc(650, 100, 30, 0, 2 * Math.PI);
-        crc2.arc(810, 100, 60, 0, 2 * Math.PI);
-        crc2.arc(870, 100, 40, 0, 2 * Math.PI);
-        crc2.arc(750, 100, 70, 0, 2 * Math.PI);
-        crc2.arc(700, 100, 50, 0, 2 * Math.PI);
-        crc2.fillStyle = "#FFFFFF";
-        crc2.fill();
-    }
-    function drawCloud3(): void {
-        crc2.beginPath();
-        crc2.arc(595, 220, 15, 0, 2 * Math.PI);
-        crc2.arc(620, 220, 25, 0, 2 * Math.PI);
-        crc2.arc(650, 220, 30, 0, 2 * Math.PI);
-        crc2.arc(680, 220, 25, 0, 2 * Math.PI);
-        crc2.arc(705, 220, 15, 0, 2 * Math.PI);
-        crc2.arc(720, 220, 10, 0, 2 * Math.PI);
-        crc2.arc(730, 220, 8, 0, 2 * Math.PI);
-        crc2.arc(740, 220, 6, 0, 2 * Math.PI);
-
-        crc2.fillStyle = "#FFFFFF";
-        crc2.fill();
-    }
-
-
-    function drawSky(): void {
-        crc2.moveTo(0, 100);
-        crc2.beginPath();
-
-        crc2.lineTo(1400, 800);
-        crc2.lineTo(1400, 0);
-        crc2.lineTo(0, 0);
-        crc2.lineTo(0, 370);
-        crc2.closePath();
-
-        var grd = crc2.createLinearGradient(0, 0, 700, 1110);
-        grd.addColorStop(0, "#7eb6e9");
-
-        crc2.fillStyle = grd;
-        crc2.fill();
-    }
-
-
-
-    function drawHill(): void {
-        let gradiant: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
-        gradiant.addColorStop(0, "HSL(197,71%,73%)");
-        gradiant.addColorStop(golden, "white");
-        gradiant.addColorStop(1, "HSL(0, 100%, 99%)");
-
-        crc2.fillStyle = gradiant;
-        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
-    }
-
-    function drawSun(): void {
-        crc2.beginPath();
-        crc2.arc(150, 100, 70, 0, 2 * Math.PI);
-        crc2.fillStyle = "#fff91d";
-        crc2.fill();
-    }
-
-
     function drawScore(): void {
         crc2.beginPath();
-        crc2.moveTo(50, 670);
-        crc2.lineTo(300, 670);
+        crc2.moveTo(50, 700);
+        crc2.lineTo(300, 700);
         crc2.lineTo(300, 770);
         crc2.lineTo(50, 770);
         crc2.closePath();
-        crc2.fillStyle = "#ffffff";
+        crc2.fillStyle = "HSLA(182,25%,50%)";
         crc2.fill();
-        crc2.lineWidth = 3.5;
-        crc2.strokeStyle = "#7eb6e9";
+        crc2.lineWidth = 1.5;
+        crc2.strokeStyle = "black";
         crc2.stroke();
 
-        crc2.font = "30px Quicksand";
+        crc2.font = "55px Amatic SC";
         crc2.fillStyle = "#000000";
-        crc2.fillText("Score", 135, 700);
+        crc2.fillText("Score", 85, 750);
 
-        crc2.font = "30px Quicksand";
+        crc2.font = "55px Amatic SC";   
         crc2.fillStyle = "#000000";
 
-        crc2.fillText(score.toString(), 135, 730);
+        crc2.fillText(score.toString(), 200, 750);
 
 
 

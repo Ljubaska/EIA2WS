@@ -4,6 +4,7 @@ var Endabgabe;
     class Snowball extends Endabgabe.DrawObject {
         constructor(_x, _y) {
             super();
+            this.typ = "snowball";
             this.target = [_x, _y];
             this.xP = 700;
             this.yP = 200;
@@ -24,9 +25,9 @@ var Endabgabe;
             Endabgabe.crc2.stroke();
         }
         move() {
-            this.scale -= 1;
-            this.xP += this.xD / 30;
-            this.yP += this.yD / 30;
+            this.scale -= 7;
+            this.xP += this.xD / 10;
+            this.yP += this.yD / 10;
         }
     }
     Endabgabe.Snowball = Snowball;

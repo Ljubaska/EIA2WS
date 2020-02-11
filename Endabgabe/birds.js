@@ -4,6 +4,7 @@ var Endabgabe;
     class Birds extends Endabgabe.DrawObject {
         constructor() {
             super();
+            this.typ = "birds";
             this.xP = Math.random() * Endabgabe.canvas.width;
             this.yP = Math.random() * Endabgabe.canvas.height;
             this.colorBody = "hsl(" + Math.random() * 360 + ", 90%, 80%)";
@@ -12,26 +13,9 @@ var Endabgabe;
         move() {
             if (this.xP <= 0)
                 this.xP = Endabgabe.canvas.width;
-            /*if (this.md == true)
-                this.moveDown();
-
-            else {*/
-            this.moveUp();
-            //}
+            this.pick();
         }
-        /*moveDown(): void {
-            this.xD = 10;
-            this.yD = 3;
-
-            this.xP += this.xD;
-            this.yP += this.yD;
-
-            if (this.xP > 1400) {
-                this.md = false;
-            }
-        }
-*/
-        moveUp() {
+        pick() {
             this.xD = Math.random() * (-20);
             this.yD = Math.random() * (0);
             this.xP += this.xD;
