@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ljubaska/EIA2WS/issues"
   },
-  "homepage": "https://github.com/ljubaska/EIA2WS#readme"
+  "homepage": "https://github.com/ljubaska/EIA2WS#readme",
+
+"dependencies": {
+  "@types/mongodb": "^3.3.1",
+  "mongodb": "^3.3.2"
+}
 }
