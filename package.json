@@ -1,10 +1,10 @@
 {
   "name": "eia2ws",
   "version": "1.0.0",
-  "description": "",
+  "description": "endabgabe",
   "main": "index.js",
   "scripts": {
-    "start": "node .EIA2WS/Endabgabe/server/server.js"
+    "start": "node EIA2WS/Endabgabe/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,8 @@
     "url": "https://github.com/ljubaska/EIA2WS/issues"
   },
   "homepage": "https://github.com/ljubaska/EIA2WS#readme",
-
-"dependencies": {
-  "@types/mongodb": "^3.3.1",
-  "mongodb": "^3.3.2"
-}
+  "dependencies": {
+    "@types/mongodb": "^3.3.1",
+    "mongodb": "^3.3.2"
+  }
 }
